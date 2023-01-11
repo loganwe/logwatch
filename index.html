@@ -28,7 +28,7 @@
         <h1>Log Watch</h1>
         <p><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></p>
         <button id="button-start">Start</button>
-        <button id="button-stop">Stop</button>
+      //  <button id="button-stop">Stop</button>
         <button id="button-reset">Reset</button>
         </div> 
           <script>
@@ -37,23 +37,29 @@
   let seconds = 00; 
   let tens = 00; 
   let minutes=00;
+   let state=1;
   let appendTens = document.getElementById("tens")
   let appendSeconds = document.getElementById("seconds")
   let appendMinutes=document.getElementById("minutes")
   let buttonStart = document.getElementById('button-start');
-  let buttonStop = document.getElementById('button-stop');
+//  let buttonStop = document.getElementById('button-stop');
   let buttonReset = document.getElementById('button-reset');
   let Interval ;
 
   buttonStart.onclick = function() {
-    
+    if(state===1){
     clearInterval(Interval);
      Interval = setInterval(startTimer, 10);
+      state++;
+    }else{
+      clearInterval(Interval);
+    state--;
+    }
   }
   
-    buttonStop.onclick = function() {
+  /*  buttonStop.onclick = function() {
        clearInterval(Interval);
-  }
+  }*/
   
 
   buttonReset.onclick = function() {
