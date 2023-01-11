@@ -50,11 +50,11 @@
     if(state===1){
     clearInterval(Interval);
      Interval = setInterval(startTimer, 10);
-      buttonStart.innerHtml="Stop";
+      buttonStart.innerHTML="Stop";
       state++;
     }else{
       clearInterval(Interval);
-      buttonStart.innerHtml="Start";
+      buttonStart.innerHTML="Start";
     state--;
     }
   }
